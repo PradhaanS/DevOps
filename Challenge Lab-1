@@ -1,3 +1,5 @@
+TASK 1
+
 export INSTANCE_NAME=
 export ZONE=
 export REGION=
@@ -13,7 +15,8 @@ gcloud compute instances create $INSTANCE_NAME \
           --image-family debian-10  \
           --image-project debian-cloud 
 
- 
+TASK 2
+
 gcloud container clusters create nucleus-backend \
 --num-nodes 1 \
 --network nucleus-vpc \
@@ -23,7 +26,8 @@ gcloud container clusters create nucleus-backend \
 gcloud container clusters get-credentials nucleus-backend \
 --zone $ZONE
  
- 
+ TASK 3
+
 kubectl create deployment hello-server \
 --image=gcr.io/google-samples/hello-app:2.0
   

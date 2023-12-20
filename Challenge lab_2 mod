@@ -46,9 +46,10 @@ docker images
 docker tag <Image_ID> us-central1-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$DOCKER_IMAGE_WITH_TAG_NAME
 
 docker push us-central1-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$DOCKER_IMAGE_WITH_TAG_NAME
-sed -i s#IMAGE_HERE#us-central1-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$DOCKER_IMAGE_WITH_TAG_NAME#g k8s/deployment.yaml
 
 Task 4. Create and expose a deployment in Kubernetes
+
+sed -i s#IMAGE_HERE#us-central1-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$DOCKER_IMAGE_WITH_TAG_NAME#g k8s/deployment.yaml
 
 gcloud container clusters get-credentials valkyrie-dev --zone us-east1-d
 kubectl create -f k8s/deployment.yaml
